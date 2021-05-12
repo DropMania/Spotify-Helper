@@ -40,8 +40,8 @@ app.whenReady().then(async () => {
             nodeIntegration: true
         }
     })
-    win.loadFile(path.join(__dirname, 'index.html'))
-    win.webContents.openDevTools()
+    /* win.loadFile(path.join(__dirname, 'index.html'))
+    win.webContents.openDevTools() */
     ipcMain.on('sendData', async (error, data) => {
         switch (data) {
             case 'Clap':
@@ -57,7 +57,7 @@ app.whenReady().then(async () => {
                 break
         }
     })
-    /* DopeAdder(Spotify) */
+    DopeAdder(Spotify)
 })
 
 app.on('window-all-closed', function () {
@@ -65,7 +65,7 @@ app.on('window-all-closed', function () {
 })
 
 function DopeAdder(Spotify) {
-    let timeToAdd = 20
+    let timeToAdd = 40
     let dope = '2pyjH91WD16a4rdzlBzM3Q'
 
     let currentTrack = ''
